@@ -1,0 +1,18 @@
+<div>
+  <button (click)="goBack($event)" type="button" mat-raised-button color="primary">Back</button>
+
+  <mat-progress-spinner
+    *ngIf="loading"
+    class="example-margin"
+    [color]="'primary'"
+    [mode]="'determinate'"
+    [value]="25">
+  </mat-progress-spinner>
+
+  <h3 *ngIf="!model && !loading">Not found</h3>
+
+  <div *ngIf="model">
+    <h3><strong>Name:</strong> {{model.full_name}}</h3>
+    <h4><strong>Last update:</strong> {{ model.updated_at | date: 'dd/MM/yyyy' }}</h4>
+  </div>
+</div>

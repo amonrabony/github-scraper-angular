@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="row">
+    <app-search (onHandle)="onHandle($event)"></app-search>
+
+    <app-repositories *ngIf="data.length > 0" [data]="data"></app-repositories>
+  </div>
+</div>

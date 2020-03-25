@@ -1,0 +1,19 @@
+<div class="form-wrap">
+  <form [formGroup]="searchForm" (ngSubmit)="send()">
+    <mat-form-field>
+      <input matInput placeholder="Search" name="search" formControlName="search" required>
+      <mat-error *ngIf="hasError('search', 'required')">Field is required</mat-error>
+    </mat-form-field>
+  </form>
+
+  <div class="action">
+    <button class="action__item" (click)="send()" [disabled]='loading || !searchForm.valid' type="button" mat-raised-button color="primary">
+      {{ loading ? 'Loading' : 'Search' }}
+    </button>
+
+    <button class="action__item" (click)="reset()" [disabled]='loading' type="button" mat-raised-button color="link">
+      Reset
+    </button>
+  </div>
+
+</div>

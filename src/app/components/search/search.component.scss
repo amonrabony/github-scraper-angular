@@ -1,0 +1,12 @@
+.form-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.action {
+  display: flex;
+
+  &__item:first-of-type {
+    margin-right: 16px;
+  }
+}
